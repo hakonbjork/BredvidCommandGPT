@@ -10,7 +10,6 @@ OPENAI_API_BASE = "https://test8322.openai.azure.com/"
 OPENAI_API_VERSION = "2023-03-15-preview"
 
 CHAT_ENGINE_ID = "CommandGPT4"
-CMD_EXEC_MAX_OUTPUT_LENGTH = 3000
 NUM_OF_MESSAGES = 5
 DEBUG = True
 
@@ -58,8 +57,10 @@ def chat(system_message, content_array):
         )
         return response.choices[0].message.content
     except Exception as e:
-        error_print(f"OpenAI API failed with error: {e}")
-        return "OpenAI API failed with error."
+        error = f"OpenAI API failed with error: {e}"
+        error_print(error)
+        return error
+
 
 def main():
     with open("system_content.txt") as file:
