@@ -1,10 +1,5 @@
 import os
 import openai
-import re
-import json
-import requests
-
-from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -17,7 +12,6 @@ OPENAI_API_VERSION = "2023-03-15-preview"
 CHAT_ENGINE_ID = "CommandGPT4"
 CMD_EXEC_MAX_OUTPUT_LENGTH = 3000
 NUM_OF_MESSAGES = 5
-RUN_UNSAFE_COMMANDS = False
 DEBUG = True
 
 # Define the regular expression pattern. Search for ${{COMMAND:ARGUMENT}}
